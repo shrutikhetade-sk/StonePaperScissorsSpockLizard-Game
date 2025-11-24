@@ -1,0 +1,53 @@
+<!-- NOTE: A few pieces have been added to make this file more "CORRECT" HTML. -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="ITEC345-Lab1-example1.js"> </script>
+    <link rel="stylesheet" href="ITEC345-Lab1-example1.css">
+</head>
+
+
+<body onload="console.log('RSPLS Loaded')"> <!-- Also output a message on the body has completely loaded. -->
+
+    <h1>RPSSL - Rock Paper Scissors Spock Lizard</h1>
+    <button onclick="reloadPage()">New Match</button>
+    <form action="#">
+        How many number of rounds to play?
+        <input id="ROUNDS_TO_PLAY" type="number" min="1" max="100" placeholder="Enter number of rounds" />
+        <button onClick="startGame()" id="start">Start!!!</button>
+    </form>
+
+    <div id="game_content" hidden>
+        <div>Number of Rounds Remaining:
+            <span id="REM_ROUNDS"></span>
+        </div>
+
+        <hr />
+
+        <div>Round <span id="round"></span></div>
+        <form id="game_play" action="#">
+            Choose your play:
+            <button id="ROCK" onClick="userChoice(this)">Rock</button>
+            <button id="SCIS" onClick="userChoice(this)">Scissors</button>
+            <button id="PAPR" onClick="userChoice(this)">Paper</button>
+            <button id="LIZD" onClick="userChoice(this)">Lizard</button>
+            <button id="SPOC" onClick="userChoice(this)">Spock</button>
+        </form>
+        <div id="user_choice"></div>
+        <div id="comp_choice"></div>
+        <div id="current_score"></div>
+        <div id="total_score"></div>
+        <button id="next_round" hidden onClick="nextRound()">Next Round</button>
+    </div>
+
+    <div id="scoreboard" hidden>Scoreboard
+        <ul></ul>
+    </div>
+
+</body>
+
+</html>
