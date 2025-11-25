@@ -49,10 +49,10 @@ function startGame() {
 
 
 function userChoice(buttonObj) {
-    alert("You Chose: " + buttonObj.innerHTML);
+    alert("You Chose: " + buttonObj);
     var uc = document.getElementById("user_choice");
-    uc.textContent = "Your choice: " + buttonObj.innerHTML;
-    user_choice = buttonObj.textContent;
+    uc.textContent = "Your choice: " + buttonObj;
+    user_choice = buttonObj;
 
     $("#game_play").hide();
     $("#user_choice").show();
@@ -195,6 +195,7 @@ function scoreUpdate() {
     }
     else {
         var totalScore = document.getElementById("total_score");
+        $("#total_score").show();
         if (user_wins > comp_wins) {
             totalScore.textContent = "Overall Winner: You won after winning " + user_wins + " of " + total_rounds + " rounds";
         }
@@ -224,5 +225,6 @@ function nextRound() {
 }
 
 function reloadPage() {
+    alert("Starting a new match. Current Progress/Score will be lost!!")
     location.reload();
 }

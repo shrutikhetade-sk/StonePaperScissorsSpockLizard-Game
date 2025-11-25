@@ -14,38 +14,60 @@
 <body onload="console.log('RSPLS Loaded')"> <!-- Also output a message on the body has completely loaded. -->
 
     <h1>RPSSL - Rock Paper Scissors Spock Lizard</h1>
-    <button onclick="reloadPage()">New Match</button>
-    <form action="#">
+    <h2>Play Now!!!</h2>
+    <div class="new-match">Click to Start a New Match<button onclick="reloadPage()">New Match</button></div>
+    <div class="note">Note : Starting a new match results in a loss of current score and progress.</div>
+    <form action="#" class="action-form">
         How many number of rounds to play?
         <input id="ROUNDS_TO_PLAY" type="number" min="1" max="100" placeholder="Enter number of rounds" />
         <button onClick="startGame()" id="start">Start!!!</button>
     </form>
 
     <div id="game_content" hidden>
-        <div>Number of Rounds Remaining:
+        <div class="rounds-remaining">Number of Rounds Remaining:
             <span id="REM_ROUNDS"></span>
         </div>
 
         <hr />
 
-        <div>Round <span id="round"></span></div>
+        <div class="round-number">Round <span id="round"></span></div>
         <form id="game_play" action="#">
             Choose your play:
-            <button id="ROCK" onClick="userChoice(this)">Rock</button>
-            <button id="SCIS" onClick="userChoice(this)">Scissors</button>
-            <button id="PAPR" onClick="userChoice(this)">Paper</button>
-            <button id="LIZD" onClick="userChoice(this)">Lizard</button>
-            <button id="SPOC" onClick="userChoice(this)">Spock</button>
+            <div class="button-row">
+                <button id="ROCK" onClick="userChoice('Rock')" class="custom-button">
+                    <span class="button-title">Rock</span>
+                    <img src="images/rock.png" alt="Rock" class="button-image">
+                </button>
+                <button id="SCIS" onClick="userChoice('Scissors')" class="custom-button">
+                    <span class="button-title">Scissors</span>
+                    <img src="images/scissors.png" alt="Scissors" class="button-image">
+                </button>
+                <button id="PAPR" onClick="userChoice('Paper')" class="custom-button">
+                    <span class="button-title">Paper</span>
+                    <img src="images/paper.png" alt="Paper" class="button-image">
+                </button>
+                <button id="LIZD" onClick="userChoice('Lizard')" class="custom-button">
+                    <span class="button-title">Lizard</span>
+                    <img src="images/lizard.png" alt="Lizard" class="button-image">
+                </button>
+                <button id="SPOC" onClick="userChoice('Spock')" class="custom-button">
+                    <span class="button-title">Spock</span>
+                    <img src="images/spock.png" alt="Spock" class="button-image">
+                </button>
+            </div>
         </form>
-        <div id="user_choice"></div>
-        <div id="comp_choice"></div>
-        <div id="current_score"></div>
-        <div id="total_score"></div>
+        <div class="game-score">
+            <div id="user_choice"></div>
+            <div id="comp_choice"></div>
+            <div id="current_score"></div>
+            <div id="total_score" hidden></div>
+        </div>
         <button id="next_round" hidden onClick="nextRound()">Next Round</button>
     </div>
 
-    <div id="scoreboard" hidden>Scoreboard
-        <ul></ul>
+    <div id="scoreboard" class="custom-scoreboard" hidden>
+        <div class="custom-scoreboard-title">Scoreboard</div>
+        <ul class="list"></ul>
     </div>
 
 </body>

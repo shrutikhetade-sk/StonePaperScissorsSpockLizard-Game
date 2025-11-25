@@ -1,3 +1,205 @@
-#ROUNDS_TO_PLAY{
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+h1,
+h2 {
+    text-align: center;
+    margin-bottom: -15px;
+}
+
+h1 {
+    font-size: 50px;
+    margin-top: -1px;
+}
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+#ROUNDS_TO_PLAY {
     min-width: 200px;
+    height: 22px;
+    font-size: 15px;
+}
+
+.button-row {
+    display: flex;
+    gap: 20px;
+    /* space between buttons */
+    justify-content: center;
+    /* optional: centers all buttons */
+    margin-top: 20px;
+}
+
+.custom-button {
+    display: flex;
+    flex-direction: column;
+    /* text on top, image below */
+    align-items: center;
+    /* center horizontally */
+    justify-content: center;
+    background: #fff;
+    /* clean background for button */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    height: 110px;
+    width: 110px;
+}
+
+.button-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    /* spacing above image */
+    text-align: center;
+}
+
+.button-image {
+    width: 75px;
+    height: 75px;
+    background: transparent !important;
+    /* FORCE transparent background */
+    border: none;
+    display: block;
+}
+
+.custom-scoreboard {
+    border: 2px #fff;
+    border-radius: 10px;
+}
+
+#game_content {
+    text-align: center;
+    font-size: large;
+}
+
+.round-number {
+    font-size: 40px;
+    color: #1a1a1a;
+    background-color: #ffffff;
+}
+
+#game_play,
+.rounds-remaining,
+.new-match,
+.action-form {
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.game-score {
+    height: 110px;
+    margin-top: 20px;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    /* stack items vertically */
+    gap: 8px;
+    /* <— vertical space between elements */
+    align-items: center;
+}
+
+.custom-scoreboard {
+    position: absolute;
+    /* allows centering anywhere */
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    /* perfect centering */
+
+    width: 500px;
+    /* optional: choose a size */
+    padding: 20px;
+    background: #e8e8e8;
+    border: 2px solid #444;
+    /* border */
+    border-radius: 10px;
+    /* optional: rounded corners */
+
+    text-align: center;
+    /* title centered */
+    font-size: 30px;
+    color: #1a1a1a;
+}
+
+.custom-scoreboard .list {
+    margin-top: 5px;
+    padding: 0;
+    font-size: 20px;
+
+    list-style: none;
+    /* remove bullets */
+    text-align: left;
+    /* justify (left-align) list items */
+}
+
+.custom-scoreboard-title {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.new-match,
+.action-form,
+.note {
+    text-align: center;
+}
+
+.new-match button {
+    font-size: 20px;
+    /* slightly smaller than text */
+    margin-left: 12px;
+    /* space between text and button */
+}
+
+.new-match button:hover,
+#start:hover,
+#next_round:hover {
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
+#start,
+#next_round {
+    font-size: 20px;
+    /* slightly smaller than text */
+}
+
+#start:hover {
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
+#next_round {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.action-form {
+    display: flex;
+    align-items: center;
+    /* vertically centers everything */
+    gap: 12px;
+    /* space between items */
+    justify-content: center;
+}
+
+#total_score {
+    font-size: 30px;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    padding: 5px 15px;
+}
+
+.button-row button {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button-row button:hover {
+    transform: scale(1.1);                   /* makes button bigger */
+    box-shadow: 0 0 12px rgba(0,0,0,0.25);   /* highlight glow */
+    background: #f8f8f8;                     /* subtle highlight */
 }
