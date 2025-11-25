@@ -57,9 +57,7 @@ function userChoice(buttonObj) {
     $("#game_play").hide();
     $("#user_choice").show();
 
-    computerChoice();
-    scoreUpdate();
-
+    showLoader();
 }
 
 function computerChoice() {
@@ -203,7 +201,7 @@ function scoreUpdate() {
             totalScore.textContent = "Overall Winner: Computer won after winning " + comp_wins + " of " + total_rounds + " rounds";
         }
         else {
-            totalScore.textContent = "Final: It's a draw. Ready for a Rematch?";
+            totalScore.textContent = "Final Result: It's a draw. Ready for a Rematch?";
         }
     }
 
@@ -227,4 +225,23 @@ function nextRound() {
 function reloadPage() {
     alert("Starting a new match. Current Progress/Score will be lost!!")
     location.reload();
+}
+
+function showLoader() {
+    const loader = document.getElementById("loader-overlay");
+    loader.style.visibility = "visible";
+    loader.style.opacity = "1";
+
+    // wait a little before computer makes its move
+    setTimeout(() => {
+        hideLoader();
+        computerChoice();
+        scoreUpdate();
+    }, 1500);           // 1.5 seconds 
+}
+
+function hideLoader() {
+    const loader = document.getElementById("loader-overlay");
+    loader.style.opacity = "0";
+    setTimeout(() => loader.style.visibility = "hidden", 400);
 }
